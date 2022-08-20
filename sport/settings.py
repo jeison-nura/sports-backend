@@ -71,17 +71,17 @@ WSGI_APPLICATION = 'sport.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'djongo',
-#         'NAME':'testSports',
-#         'CLIENT':{
-#             'host': 'mongodb://mongodb:27017',
-#             'username': 'root',
-#             'password': 'toor'
-#         }
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME':'testSports',
+        'CLIENT':{
+            'host': 'mongodb://localhost:27017',
+            'username': 'root',
+            'password': 'toor'
+        }
+    }
+}
 
 
 # Password validation
