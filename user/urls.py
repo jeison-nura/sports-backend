@@ -1,7 +1,12 @@
-from django.urls import URLPattern, path
+from django.urls import path
 from . import views
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 urlpatterns = [
-    # ex: /polls/
-    path('hola', views.holaGuebon.as_view(), name='index'),
+    path('login', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
+    path('holi', views.holaGuebon.as_view(), name='guevon')
 ]

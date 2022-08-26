@@ -30,16 +30,28 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
+LOCAL_APPS = ['user']
+
+BASE_APPS = ['django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
-    'user'
-]
+    'rest_framework']
+
+INSTALLED_APPS = LOCAL_APPS + BASE_APPS
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.AllowAny',
+    ),
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    )
+}
+
+ADMIN_ENABLED = False
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -75,17 +87,17 @@ WSGI_APPLICATION = 'sports.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'djongo',
-#         'NAME':'testSports',
-#         'CLIENT':{
-#             'host': 'mongodb://localhost:27017',
-#             'username': 'root',
-#             'password': 'toor'
-#         }
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'NAME':'testSports',
+        'CLIENT':{
+            'host': 'mongodb://localhost:27017',
+            'username': 'root',
+            'password': 'toor'
+        }
+    }
+}
 
 
 # Password validation
