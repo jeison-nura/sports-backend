@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework'
+    'rest_framework',
+    'user'
 ]
 
 MIDDLEWARE = [
@@ -74,17 +75,17 @@ WSGI_APPLICATION = 'sports.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'djongo',
-        'NAME':'testSports',
-        'CLIENT':{
-            'host': 'mongodb://localhost:27017',
-            'username': 'root',
-            'password': 'toor'
-        }
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME':'testSports',
+#         'CLIENT':{
+#             'host': 'mongodb://localhost:27017',
+#             'username': 'root',
+#             'password': 'toor'
+#         }
+#     }
+# }
 
 
 # Password validation
