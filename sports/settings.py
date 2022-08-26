@@ -51,6 +51,8 @@ REST_FRAMEWORK = {
     )
 }
 
+AUTH_USER_MODEL = "user.User" 
+
 ADMIN_ENABLED = False
 
 MIDDLEWARE = [
